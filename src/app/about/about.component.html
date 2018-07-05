@@ -1,0 +1,14 @@
+<div class="main-container">
+    <p>
+        Student Name: <input type="textbox" name="input-name" [(ngModel)]="inputText" />
+        <button id="add-item" placeholder="Student Name" (click)="addItem()">Add Item</button>
+    </p>
+    <div class="student-list" [@studentList]=studentNames.length>
+        <ul>
+            <li *ngFor="let student of studentNames let i = index" (click)="removeItem(i)">
+                <p><b>{{i+1}}.</b>  {{student}}</p>
+            </li>
+
+        </ul>
+    </div>
+</div>
